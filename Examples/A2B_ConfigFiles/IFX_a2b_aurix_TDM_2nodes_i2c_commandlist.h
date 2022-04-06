@@ -986,47 +986,6 @@ static unsigned char gaConfig_AD242xMasterNode0_CONTROL_Data37[1] =
 ADI_A2B_DISCOVERY_CONFIG gaA2BConfig[CONFIG_LEN] =
 {
 
-	/*-- COMMANDS FOR DEVICE - Audio Host0 --*/
-	{0x39u,	WRITE,	0x02u,	0x00000000u,	0x01u,	0x0004u,	&gaConfig_AudioHost0_NonModRamAlloc_Data0[0]},	/* NonModRamAlloc */
-	{0x39u,	WRITE,	0x02u,	0x000040EBu,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SampleRate_Data1[0]},	/* IC 1.Sample Rate Setting */
-	{0x39u,	WRITE,	0x02u,	0x000040F6u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPRun_Data2[0]},	/* IC 1.DSP Run Register */
-	{0x39u,	WRITE,	0x02u,	0x00004000u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_ClockControl_Data3[0]},	/* IC 1.Clock Control Register */
-	{0x39u,	WRITE,	0x02u,	0x00004002u,	0x01u,	0x0006u,	&gaConfig_AudioHost0_PLLControl_Data4[0]},	/* IC 1.PLL Control Register */
-	{0x00u,	DELAY,	0x02u,	0x00000000u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_Delay_Data5[0]},	/* IC 1.Delay */
-	{0x39u,	WRITE,	0x02u,	0x00004015u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_SerialPort_Data6[0]},	/* IC 1.Serial Port Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x00004011u,	0x01u,	0x0004u,	&gaConfig_AudioHost0_ALCControl_Data7[0]},	/* IC 1.ALC Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x00004008u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_MicrophoneControl_Data8[0]},	/* IC 1.Microphone Control Register */
-	{0x39u,	WRITE,	0x02u,	0x00004009u,	0x01u,	0x0008u,	&gaConfig_AudioHost0_RecordInput_Data9[0]},	/* IC 1.Record Input Signal Path Registers */
-	{0x39u,	WRITE,	0x02u,	0x00004019u,	0x01u,	0x0003u,	&gaConfig_AudioHost0_ADCControl_Data10[0]},	/* IC 1.ADC Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x0000401Cu,	0x01u,	0x000Eu,	&gaConfig_AudioHost0_PlaybackOutput_Data11[0]},	/* IC 1.Playback Output Signal Path Registers */
-	{0x39u,	WRITE,	0x02u,	0x00004017u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_ConverterControl_Data12[0]},	/* IC 1.Converter Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x0000402Au,	0x01u,	0x0003u,	&gaConfig_AudioHost0_DACControl_Data13[0]},	/* IC 1.DAC Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x0000402Du,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SerialPort_Data14[0]},	/* IC 1.Serial Port Pad Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x0000402Fu,	0x01u,	0x0002u,	&gaConfig_AudioHost0_CommunicationPort_Data15[0]},	/* IC 1.Communication Port Pad Control Registers */
-	{0x39u,	WRITE,	0x02u,	0x00004031u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_JackDetect_Data16[0]},	/* IC 1.Jack Detect Pad Control Register */
-	{0x39u,	WRITE,	0x02u,	0x00000800u,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data17[0]},	/* Program Clear Block 0 */
-	{0x39u,	WRITE,	0x02u,	0x000008CCu,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data18[0]},	/* Program Clear Block 1 */
-	{0x39u,	WRITE,	0x02u,	0x00000998u,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data19[0]},	/* Program Clear Block 2 */
-	{0x39u,	WRITE,	0x02u,	0x00000A64u,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data20[0]},	/* Program Clear Block 3 */
-	{0x39u,	WRITE,	0x02u,	0x00000BFCu,	0x01u,	0x000Fu,	&gaConfig_AudioHost0_ProgramClear_Data21[0]},	/* Program Clear Block 4 */
-	{0x39u,	WRITE,	0x02u,	0x000040F5u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPON_Data22[0]},	/* IC 1.DSP ON Register */
-	{0x39u,	WRITE,	0x02u,	0x000040C0u,	0x01u,	0x0005u,	&gaConfig_AudioHost0_CRCRegisters_Data23[0]},	/* IC 1.CRC Registers */
-	{0x39u,	WRITE,	0x02u,	0x000040C6u,	0x01u,	0x0004u,	&gaConfig_AudioHost0_GPIORegisters_Data24[0]},	/* IC 1.GPIO Registers */
-	{0x39u,	WRITE,	0x02u,	0x000040E9u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_NonModulo_Data25[0]},	/* IC 1.Non Modulo Registers */
-	{0x39u,	WRITE,	0x02u,	0x000040D0u,	0x01u,	0x0005u,	&gaConfig_AudioHost0_WatchdogRegisters_Data26[0]},	/* IC 1.Watchdog Registers */
-	{0x39u,	WRITE,	0x02u,	0x000040EBu,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SamplingRate_Data27[0]},	/* IC 1.Sampling Rate Setting Register */
-	{0x39u,	WRITE,	0x02u,	0x000040F2u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_RoutingMatrix_Data28[0]},	/* IC 1.Routing Matrix Inputs Register */
-	{0x39u,	WRITE,	0x02u,	0x000040F3u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_RoutingMatrix_Data29[0]},	/* IC 1.Routing Matrix Outputs Register */
-	{0x39u,	WRITE,	0x02u,	0x000040F4u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SerialData_Data30[0]},	/* IC 1.Serial Data Configuration Register */
-	{0x39u,	WRITE,	0x02u,	0x000040F7u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPSlew_Data31[0]},	/* IC 1.DSP Slew Mode Register */
-	{0x39u,	WRITE,	0x02u,	0x000040F8u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SerialPort_Data32[0]},	/* IC 1.Serial Port Sample Rate Register */
-	{0x39u,	WRITE,	0x02u,	0x000040F9u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_ClockEnable_Data33[0]},	/* IC 1.Clock Enable Registers */
-	{0x39u,	WRITE,	0x02u,	0x00000800u,	0x01u,	0x0113u,	&gaConfig_AudioHost0_ProgramData_Data34[0]},	/* Program Data */
-	{0x39u,	WRITE,	0x02u,	0x00000000u,	0x01u,	0x0020u,	&gaConfig_AudioHost0_Param_Data35[0]},	/* Param */
-	{0x39u,	WRITE,	0x02u,	0x000040EBu,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SampleRate_Data36[0]},	/* IC 1.Sample Rate Setting */
-	{0x39u,	WRITE,	0x02u,	0x000040F6u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPRun_Data37[0]},	/* IC 1.DSP Run Register */
-	{0x39u,	WRITE,	0x02u,	0x00004036u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DejitterRegister_Data38[0]},	/* IC 1.Dejitter Register Control */
-	{0x39u,	WRITE,	0x02u,	0x00004036u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DejitterRegister_Data39[0]},	/* IC 1.Dejitter Register Control */
 
 	/*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
 	{0x68u,	WRITE,	0x01u,	0x00000012u,	0x01u,	0x0001u,	&gaConfig_AD242xMasterNode0_CONTROL_Data0[0]},	/* CONTROL */
@@ -1118,6 +1077,49 @@ ADI_A2B_DISCOVERY_CONFIG gaA2BConfig[CONFIG_LEN] =
 	{0x68u,	WRITE,	0x01u,	0x00000010u,	0x01u,	0x0001u,	&gaConfig_AD242xMasterNode0_SLOTFMT_Data35[0]},	/* SLOTFMT */
 	{0x68u,	WRITE,	0x01u,	0x00000011u,	0x01u,	0x0001u,	&gaConfig_AD242xMasterNode0_DATCTL_Data36[0]},	/* DATCTL */
 	{0x68u,	WRITE,	0x01u,	0x00000012u,	0x01u,	0x0001u,	&gaConfig_AD242xMasterNode0_CONTROL_Data37[0]},	/* CONTROL */
+	
+	
+	/*-- COMMANDS FOR DEVICE - Audio Host0 --*/
+	{0x39u,	WRITE,	0x02u,	0x00000000u,	0x01u,	0x0004u,	&gaConfig_AudioHost0_NonModRamAlloc_Data0[0]},	/* NonModRamAlloc */
+	{0x39u,	WRITE,	0x02u,	0x000040EBu,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SampleRate_Data1[0]},	/* IC 1.Sample Rate Setting */
+	{0x39u,	WRITE,	0x02u,	0x000040F6u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPRun_Data2[0]},	/* IC 1.DSP Run Register */
+	{0x39u,	WRITE,	0x02u,	0x00004000u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_ClockControl_Data3[0]},	/* IC 1.Clock Control Register */
+	{0x39u,	WRITE,	0x02u,	0x00004002u,	0x01u,	0x0006u,	&gaConfig_AudioHost0_PLLControl_Data4[0]},	/* IC 1.PLL Control Register */
+	{0x00u,	DELAY,	0x02u,	0x00000000u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_Delay_Data5[0]},	/* IC 1.Delay */
+	{0x39u,	WRITE,	0x02u,	0x00004015u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_SerialPort_Data6[0]},	/* IC 1.Serial Port Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x00004011u,	0x01u,	0x0004u,	&gaConfig_AudioHost0_ALCControl_Data7[0]},	/* IC 1.ALC Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x00004008u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_MicrophoneControl_Data8[0]},	/* IC 1.Microphone Control Register */
+	{0x39u,	WRITE,	0x02u,	0x00004009u,	0x01u,	0x0008u,	&gaConfig_AudioHost0_RecordInput_Data9[0]},	/* IC 1.Record Input Signal Path Registers */
+	{0x39u,	WRITE,	0x02u,	0x00004019u,	0x01u,	0x0003u,	&gaConfig_AudioHost0_ADCControl_Data10[0]},	/* IC 1.ADC Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x0000401Cu,	0x01u,	0x000Eu,	&gaConfig_AudioHost0_PlaybackOutput_Data11[0]},	/* IC 1.Playback Output Signal Path Registers */
+	{0x39u,	WRITE,	0x02u,	0x00004017u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_ConverterControl_Data12[0]},	/* IC 1.Converter Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x0000402Au,	0x01u,	0x0003u,	&gaConfig_AudioHost0_DACControl_Data13[0]},	/* IC 1.DAC Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x0000402Du,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SerialPort_Data14[0]},	/* IC 1.Serial Port Pad Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x0000402Fu,	0x01u,	0x0002u,	&gaConfig_AudioHost0_CommunicationPort_Data15[0]},	/* IC 1.Communication Port Pad Control Registers */
+	{0x39u,	WRITE,	0x02u,	0x00004031u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_JackDetect_Data16[0]},	/* IC 1.Jack Detect Pad Control Register */
+	{0x39u,	WRITE,	0x02u,	0x00000800u,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data17[0]},	/* Program Clear Block 0 */
+	{0x39u,	WRITE,	0x02u,	0x000008CCu,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data18[0]},	/* Program Clear Block 1 */
+	{0x39u,	WRITE,	0x02u,	0x00000998u,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data19[0]},	/* Program Clear Block 2 */
+	{0x39u,	WRITE,	0x02u,	0x00000A64u,	0x01u,	0x03FCu,	&gaConfig_AudioHost0_ProgramClear_Data20[0]},	/* Program Clear Block 3 */
+	{0x39u,	WRITE,	0x02u,	0x00000BFCu,	0x01u,	0x000Fu,	&gaConfig_AudioHost0_ProgramClear_Data21[0]},	/* Program Clear Block 4 */
+	{0x39u,	WRITE,	0x02u,	0x000040F5u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPON_Data22[0]},	/* IC 1.DSP ON Register */
+	{0x39u,	WRITE,	0x02u,	0x000040C0u,	0x01u,	0x0005u,	&gaConfig_AudioHost0_CRCRegisters_Data23[0]},	/* IC 1.CRC Registers */
+	{0x39u,	WRITE,	0x02u,	0x000040C6u,	0x01u,	0x0004u,	&gaConfig_AudioHost0_GPIORegisters_Data24[0]},	/* IC 1.GPIO Registers */
+	{0x39u,	WRITE,	0x02u,	0x000040E9u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_NonModulo_Data25[0]},	/* IC 1.Non Modulo Registers */
+	{0x39u,	WRITE,	0x02u,	0x000040D0u,	0x01u,	0x0005u,	&gaConfig_AudioHost0_WatchdogRegisters_Data26[0]},	/* IC 1.Watchdog Registers */
+	{0x39u,	WRITE,	0x02u,	0x000040EBu,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SamplingRate_Data27[0]},	/* IC 1.Sampling Rate Setting Register */
+	{0x39u,	WRITE,	0x02u,	0x000040F2u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_RoutingMatrix_Data28[0]},	/* IC 1.Routing Matrix Inputs Register */
+	{0x39u,	WRITE,	0x02u,	0x000040F3u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_RoutingMatrix_Data29[0]},	/* IC 1.Routing Matrix Outputs Register */
+	{0x39u,	WRITE,	0x02u,	0x000040F4u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SerialData_Data30[0]},	/* IC 1.Serial Data Configuration Register */
+	{0x39u,	WRITE,	0x02u,	0x000040F7u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPSlew_Data31[0]},	/* IC 1.DSP Slew Mode Register */
+	{0x39u,	WRITE,	0x02u,	0x000040F8u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SerialPort_Data32[0]},	/* IC 1.Serial Port Sample Rate Register */
+	{0x39u,	WRITE,	0x02u,	0x000040F9u,	0x01u,	0x0002u,	&gaConfig_AudioHost0_ClockEnable_Data33[0]},	/* IC 1.Clock Enable Registers */
+	{0x39u,	WRITE,	0x02u,	0x00000800u,	0x01u,	0x0113u,	&gaConfig_AudioHost0_ProgramData_Data34[0]},	/* Program Data */
+	{0x39u,	WRITE,	0x02u,	0x00000000u,	0x01u,	0x0020u,	&gaConfig_AudioHost0_Param_Data35[0]},	/* Param */
+	{0x39u,	WRITE,	0x02u,	0x000040EBu,	0x01u,	0x0001u,	&gaConfig_AudioHost0_SampleRate_Data36[0]},	/* IC 1.Sample Rate Setting */
+	{0x39u,	WRITE,	0x02u,	0x000040F6u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DSPRun_Data37[0]},	/* IC 1.DSP Run Register */
+	{0x39u,	WRITE,	0x02u,	0x00004036u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DejitterRegister_Data38[0]},	/* IC 1.Dejitter Register Control */
+	{0x39u,	WRITE,	0x02u,	0x00004036u,	0x01u,	0x0001u,	&gaConfig_AudioHost0_DejitterRegister_Data39[0]},	/* IC 1.Dejitter Register Control */
 };
 
 #endif /* _ADI_A2B_I2C_LIST_H_ */
