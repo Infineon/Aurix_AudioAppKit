@@ -63,8 +63,8 @@
 /*-------------------------Private Variables/Constants-----------------------*/
 /*****************************************************************************/
 
-char UART_rxBuf[100];
-char UART_txBuf[120];
+char UART_rxBuf[256];
+char UART_txBuf[1024];
 
 /*****************************************************************************/
 /*----------------------------Function Prototypes----------------------------*/
@@ -80,8 +80,8 @@ static __attribute__((__noreturn__)) void OsTask_UART(void *arg)
     (void)arg;
 
     uint8_t UART_rxBufPtr=0;
-    uint8_t infocounter = 0;
-
+    uint16_t infocounter = 0;
+    uint32_t printcounter = 0;
 
     initUART();
 
@@ -99,11 +99,11 @@ static __attribute__((__noreturn__)) void OsTask_UART(void *arg)
             //check if user pressed enter - if yes print the line back
             for (int i=0; i<UART_rxBufPtr;i++) {
                 if (UART_rxBuf[i] == '\r') {
-                    memset(UART_txBuf,0,120);
+                    memset(UART_txBuf,0,1024);
                     sprintf(UART_txBuf,"Rx-Msg: %s\r\n",UART_rxBuf);
                     sendUARTMessage(UART_txBuf,strlen(UART_txBuf));
                     UART_rxBufPtr -= (i+1);
-                    memset(UART_rxBuf,0,100);
+                    memset(UART_rxBuf,0,256);
                     break;
                 }
             }
@@ -111,11 +111,12 @@ static __attribute__((__noreturn__)) void OsTask_UART(void *arg)
         }
         else {
 
-            //send out every 500ms how many data is in the rx queue
-            if (infocounter == 50) {
+            //send out every 2 secs task-statistics & rx-buf queue size
+            if (infocounter == 200) {
                 infocounter = 0;
-                memset(UART_txBuf,0,120);
-                sprintf (UART_txBuf, "Uart RX Count: %d\r\n", UART_rxBufPtr);
+                memset(UART_txBuf,0,1024);
+                sprintf (UART_txBuf, "\r\n\r\nTask-Statistics %u - Uart RX Count: %d\r\n", printcounter++, UART_rxBufPtr);
+                vTaskGetRunTimeStats(&UART_txBuf[strlen(UART_txBuf)]);
                 sendUARTMessage(UART_txBuf,strlen(UART_txBuf));
             }
             else {

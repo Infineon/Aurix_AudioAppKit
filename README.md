@@ -71,7 +71,7 @@ The AppKit was primarily designed to explore audio-functionalities on Aurix™ p
 <br><br>
  ## Key Features and Benefits - A²B Slave Board
  * AD2428W A²B Transceiver
- * Four XENSIV™ IM67D120A digital MEMS microphones with PDM interface as T array configuration 
+ * Four XENSIV™ IM67D130A digital MEMS microphones with PDM interface as T array configuration 
 <br><br><br>
 <img src="/Documentation/Images/a2b_slave_top.PNG" width="600"> 
 

@@ -1,11 +1,11 @@
 # A²B Master Node with Audio Loopback
 
-This example shows how to use the A²B Master-Board together with the microphone slave-nodes. The default configuration is 8-Channel audio from two slave-boards (using all 4 microphones on each slave-node).<br>
+This example shows how to use the A²B master-board together with the microphone slave-nodes. The default configuration is 8-channel audio from two slave-boards (using all 4 microphones on each slave-node).<br>
 Alternative configurations can be checked [here](/Examples/A2B_ConfigFiles).<br>
-The example sums up all 8 received audio-channels to a Stereo-Channel and loops it back to the Headphone-Output.
+The example sums up all 8 received audio-channels to a stereo signal and loops it back to the headphone-output (HP OUT).
 The loopback-volume can be controlled by the onboard potentiometer of the AURIX™ LiteKit. The user has to press the user-button during reset to activate the volume-control over potentiometer. Otherwise the volume is not manipulated.<br>
-During runtime, the user-button can be used to switch the audio source to the Line-Input on the board (instead using the microphones).<br>
-The system runs on a fixed 48 kHz sample-rate using a 8-Channel TDM bus.
+During runtime, the user-button can be used to switch the audio source to the line-input on the board (instead using the microphones).<br>
+The system runs on a fixed 48 kHz sample-rate using a 8 channel TDM bus.
 
 
 <br><br><br>

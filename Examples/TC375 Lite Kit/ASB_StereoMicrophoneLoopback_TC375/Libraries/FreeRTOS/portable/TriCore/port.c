@@ -335,3 +335,13 @@ __attribute__( ( __noreturn__ ) ) void vPortLoopForever( void )
     {
     }
 }
+
+void vPortConfigureTimeForRunTimeStats()
+{
+    //Nothing to do... STM is used
+}
+
+unsigned long portGET_RUN_TIME_COUNTER_VALUE()
+{
+    return (unsigned long) (IfxStm_get(&configSTM_MODULE)/1000);
+}

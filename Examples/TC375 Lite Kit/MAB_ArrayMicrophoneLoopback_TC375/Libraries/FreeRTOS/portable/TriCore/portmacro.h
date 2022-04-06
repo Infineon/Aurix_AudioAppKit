@@ -102,6 +102,9 @@ extern __attribute__( ( __noreturn__ ) ) void vPortLoopForever( void );
 extern inline void vPortYield( void );
 #define portYIELD()             vPortYield()
 
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() vPortConfigureTimeForRunTimeStats()
+#define portGET_RUN_TIME_COUNTER_VALUE()    vPortGetRunTimeCounterValue()
+
 /* Syscall IDs */
 #define portSYSCALL_TASK_YIELD    0
 

@@ -14,7 +14,6 @@
 #define configMAX_TASK_NAME_LEN				( 32 )
 
 #define configENABLE_BACKWARD_COMPATIBILITY 0
-#define configUSE_TRACE_FACILITY			0
 #define configUSE_16_BIT_TICKS				0
 #define configIDLE_SHOULD_YIELD				0
 #define configUSE_MALLOC_FAILED_HOOK 		0
@@ -35,6 +34,11 @@
 #define configTIMER_TASK_PRIORITY			( 9 )
 #define configTIMER_QUEUE_LENGTH			( 5 )
 #define configTIMER_TASK_STACK_DEPTH		configMINIMAL_STACK_SIZE
+
+/* Run time and task stats gathering related definitions. */
+#define configGENERATE_RUN_TIME_STATS           1
+#define configUSE_TRACE_FACILITY                1
+#define configUSE_STATS_FORMATTING_FUNCTIONS    1
 
 /* Set the following definitions to 1 to include the API function, or zero
  to exclude the API function. */

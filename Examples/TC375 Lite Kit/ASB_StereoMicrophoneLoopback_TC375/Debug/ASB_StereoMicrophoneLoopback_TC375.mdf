@@ -5,9 +5,9 @@ space	mpe:tc1:linear	201	8
 space	mpe:tc1:abs24	202	8
 space	mpe:tc1:abs18	203	8
 space	mpe:tc1:csa	204	8
-space	mpe:vtc:abs24	2	8
 space	mpe:vtc:abs18	3	8
 space	mpe:vtc:linear	1	8
+space	mpe:vtc:abs24	2	8
 space	mpe:tc2:linear	301	8
 space	mpe:tc2:abs24	302	8
 space	mpe:tc2:abs18	303	8

@@ -1337,7 +1337,33 @@
         	
     </storageModule>
     	
-    <storageModule moduleId="refreshScope"/>
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="External GCC - Debug">
+            			
+            <resource resourceType="PROJECT" workspacePath="/ASB_SimpleAudioLoopback_TC375"/>
+            		
+        </configuration>
+        		
+        <configuration configurationName="External GCC - Release">
+            			
+            <resource resourceType="PROJECT" workspacePath="/ASB_SimpleAudioLoopback_TC375"/>
+            		
+        </configuration>
+        		
+        <configuration configurationName="Debug">
+            			
+            <resource resourceType="PROJECT" workspacePath="/ASB_SimpleAudioLoopback_TC375"/>
+            		
+        </configuration>
+        		
+        <configuration configurationName="Release">
+            			
+            <resource resourceType="PROJECT" workspacePath="/ASB_SimpleAudioLoopback_TC375"/>
+            		
+        </configuration>
+        	
+    </storageModule>
     	
     <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
     
