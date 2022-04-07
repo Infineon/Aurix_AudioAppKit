@@ -576,7 +576,7 @@ void TDM8_Init_DMA(void) {
      * Configure TOM0CH3 which is LRCLK -> divide CLKINPUT/512 -> 24.576/512 = 48 kHz with 180°phase relation to BCLK
      * Clocking derived from TRIG_(x) chain
      */
-    GTM_TOM0_CH3_CN0.U = 0;
+    GTM_TOM0_CH3_CN0.U = 1;
     GTM_TOM0_CH3_SR0.U = 512;
     GTM_TOM0_CH3_SR1.U = 256;
     GTM_TOM0_CH3_CM0.U = GTM_TOM0_CH3_SR0.U;
