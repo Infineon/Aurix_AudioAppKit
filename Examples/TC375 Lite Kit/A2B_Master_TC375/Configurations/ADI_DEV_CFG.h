@@ -1123,4 +1123,3 @@ ADI_A2B_DISCOVERY_CONFIG gaA2BConfig[CONFIG_LEN] =
 };
 
 #endif /* _ADI_A2B_I2C_LIST_H_ */
-

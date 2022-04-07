@@ -5,8 +5,9 @@ Explore Audio processing on the AURIX™ platform
 <img src="/Documentation/Images/ASB.jpg" height="200"> <img src="/Documentation/Images/MAB.jpg" height="200"> <img src="/Documentation/Images/a2b_system_top.PNG" height="200"> 
 
 
-Refer also to the [Board manual](/Documentation/Board_Users_Manual_AURIX_Audio_AppKit_V1_0.pdf).
-
+See documentation here:
+* [Audio Shield Board + Microphone Array Board](/Documentation/Board_Users_Manual_AURIX_Audio_AppKit_V1_0.pdf)
+* [A²B Audio Kit](/Documentation/Infineon-EVAL_A2B_Kit-UG-v01_00-EN.pdf)
 
 <br><br>
 ## Summary
@@ -95,6 +96,7 @@ Please follow the example projects in the /Examples directory to learn more abou
 
 <br><br>
 ## System-Concept & Board Documentation
-In case you want to learn more about the I²S/PDM interfacing concepts or about the board-design, you can study the user-manual.
+In case you want to learn more about the I²S/TDM/PDM interfacing concepts or about the board-design, you can study the user-manuals.
 
-[AURIX™ Audio AppKit Documentation](/Documentation/Board_Users_Manual_AURIX_Audio_AppKit_V1_0.pdf)
+* [Audio Shield Board + Microphone Array Board](/Documentation/Board_Users_Manual_AURIX_Audio_AppKit_V1_0.pdf)
+* [A²B Audio Kit](/Documentation/Infineon-EVAL_A2B_Kit-UG-v01_00-EN.pdf)
