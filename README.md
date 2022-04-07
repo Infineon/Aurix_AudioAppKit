@@ -82,6 +82,7 @@ The AppKit was primarily designed to explore audio-functionalities on Aurix™ p
 | :---: | :---: | :---: | :---: |
 | **AURIX™ TC375 lite Kit** | yes | yes | yes |
 | **AURIX™ TC334 lite Kit** | yes | no | yes |
+
 <br><br>
 * [TC334 LiteKit product page](https://www.infineon.com/cms/en/product/evaluation-boards/kit_a2g_tc334_lite/)
 * [TC334 LiteKit user manual](https://www.infineon.com/dgdl/Infineon-AURIX_TC334_lite_Kit-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7ddc01d7017e48dde16d0c94)
