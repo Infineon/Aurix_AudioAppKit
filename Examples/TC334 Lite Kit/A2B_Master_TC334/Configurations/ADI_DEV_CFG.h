@@ -1,16 +1,16 @@
 /*******************************************************************************
-Copyright (c) 2022 - Analog Devices Inc. All Rights Reserved.
+Copyright (c) 2023 - Analog Devices Inc. All Rights Reserved.
 This software is proprietary & confidential to Analog Devices, Inc.
 and its licensors.
 ******************************************************************************
-* @brief: This file contains I2C command sequence to be followed for discovery
-*         and configuration of A2B nodes for an A2B schematic
+* @brief: This file contains I2C/SPI command sequence to be followed for
+*         discovery and configuration of A2B nodes for an A2B schematic
 * @version: $Revision$
-* @date: Thursday, January 13, 2022-3:13:52 PM
-* I2C Command File Version - 1.0.0
-* A2B DLL version- 19.3.0
-* A2B Stack DLL version- 19.3.0.0
-* SigmaStudio version- 4.05.000.1779
+* @date: Thursday, November 16, 2023-6:06:29 PM
+* I2C/SPI Command File Version - 1.0.0
+* A2B DLL version- 19.4.3.0
+* A2B Stack DLL version- 19.4.3.0
+* SigmaStudio version- 4.07.000.1831
 * Developed by: Automotive Software and Systems team, Bangalore, India
 * THIS IS A SIGMASTUDIO GENERATED FILE
 *****************************************************************************/
@@ -18,18 +18,18 @@ and its licensors.
 /*! \addtogroup ADI_A2B_DISCOVERY_CONFIG ADI_A2B_DISCOVERY_CONFIG
 * @{
 */
-#ifndef _ADI_A2B_I2C_LIST_H_
-#define _ADI_A2B_I2C_LIST_H_
+#ifndef _ADI_A2B_CMD_LIST_H_
+#define _ADI_A2B_CMD_LIST_H_
 
 /*! \struct ADI_A2B_DISCOVERY_CONFIG
 A2B discovery config unit structure
 */
 typedef struct
  {
-/*!  Device address */
+/*! Device address */
     unsigned char nDeviceAddr;
 
-/*!  Operation code */
+/*! Operation code */
     unsigned char eOpCode;
 
 /*! Reg Sub address width (in bytes) */
@@ -47,7 +47,6 @@ typedef struct
 /*! Config Data */
     unsigned char* paConfigData;
 
-
 } ADI_A2B_DISCOVERY_CONFIG;
 
 #define WRITE   ((unsigned char) 0x00u)
@@ -55,7 +54,7 @@ typedef struct
 #define DELAY   ((unsigned char) 0x02u)
 #define INVALID ((unsigned char) 0xffu)
 
-#define CONFIG_LEN (97)
+#define CONFIG_LEN (100)
 
 
 static unsigned char gaConfig_AudioHost0_NonModRamAlloc_Data0[4] =
@@ -90,7 +89,7 @@ static unsigned char gaConfig_AudioHost0_Delay_Data5[2] =
 
 static unsigned char gaConfig_AudioHost0_SerialPort_Data6[2] =
 {
-    0x14u,  0x81u
+    0x04u,  0x81u
 };
 
 static unsigned char gaConfig_AudioHost0_ALCControl_Data7[4] =
@@ -115,8 +114,8 @@ static unsigned char gaConfig_AudioHost0_ADCControl_Data10[3] =
 
 static unsigned char gaConfig_AudioHost0_PlaybackOutput_Data11[14] =
 {
-    0x21u,  0x00u,  0x41u,  0x00u,  0x00u,  0x00u,  0x01u,  0xE7u,  0xE7u,  0x00u,
-    0x00u,  0xE7u,  0x00u,  0x03u
+    0x21u,  0x00u,  0x41u,  0x00u,  0x03u,  0x09u,  0x01u,  0xE7u,  0xE7u,  0xE6u,
+    0xE6u,  0xE7u,  0x00u,  0x03u
 };
 
 static unsigned char gaConfig_AudioHost0_ConverterControl_Data12[2] =
@@ -723,47 +722,57 @@ static unsigned char gaConfig_AD242xMasterNode0_INTMSK2_Data4[1] =
     0x09u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_RESPCYCS_Data5[1] =
-{
-    0x66u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_CONTROL_Data6[1] =
+static unsigned char gaConfig_AD242xMasterNode0_INTPND2_Data5[1] =
 {
     0x01u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_I2SGCFG_Data7[1] =
+static unsigned char gaConfig_AD242xMasterNode0_RESPCYCS_Data6[1] =
+{
+    0x64u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_CONTROL_Data7[1] =
+{
+    0x81u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_A2BDelay_Data8[1] =
+{
+    0x01u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_I2SGCFG_Data9[1] =
 {
     0x22u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_SWCTL_Data8[1] =
+static unsigned char gaConfig_AD242xMasterNode0_SWCTL_Data10[1] =
 {
     0x01u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_DISCVRY_Data9[1] =
+static unsigned char gaConfig_AD242xMasterNode0_DISCVRY_Data11[1] =
 {
-    0x66u
+    0x64u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_A2BDelay_Data10[1] =
+static unsigned char gaConfig_AD242xMasterNode0_A2BDelay_Data12[1] =
 {
     0x32u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_INTPND2_Data11[1] =
+static unsigned char gaConfig_AD242xMasterNode0_INTTYPE_Data13[1] =
 {
     0x00u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_INTPND2_Data12[1] =
+static unsigned char gaConfig_AD242xMasterNode0_SWCTL_Data14[1] =
 {
-    0x01u
+    0x21u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data13[1] =
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data15[1] =
 {
     0x00u
 };
@@ -783,12 +792,7 @@ static unsigned char gaConfig_AD242xSlaveNode0_VERSION_Data2[1] =
     0x00u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_SWCTL_Data14[1] =
-{
-    0x21u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data15[1] =
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data16[1] =
 {
     0x00u
 };
@@ -798,27 +802,32 @@ static unsigned char gaConfig_AD242xSlaveNode0_SWCTL_Data3[1] =
     0x01u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_DISCVRY_Data16[1] =
+static unsigned char gaConfig_AD242xMasterNode0_DISCVRY_Data17[1] =
 {
-    0x62u
+    0x60u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_A2BDelay_Data17[1] =
+static unsigned char gaConfig_AD242xMasterNode0_A2BDelay_Data18[1] =
 {
     0x32u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_INTPND2_Data18[1] =
+static unsigned char gaConfig_AD242xMasterNode0_INTTYPE_Data19[1] =
 {
     0x00u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_INTPND2_Data19[1] =
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data20[1] =
 {
-    0x01u
+    0x00u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data20[1] =
+static unsigned char gaConfig_AD242xSlaveNode0_SWCTL_Data4[1] =
+{
+    0x21u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data21[1] =
 {
     0x01u
 };
@@ -836,16 +845,6 @@ static unsigned char gaConfig_AD242xSlaveNode1_PRODUCT_Data1[1] =
 static unsigned char gaConfig_AD242xSlaveNode1_VERSION_Data2[1] =
 {
     0x00u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data21[1] =
-{
-    0x00u
-};
-
-static unsigned char gaConfig_AD242xSlaveNode0_SWCTL_Data4[1] =
-{
-    0x21u
 };
 
 static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data22[1] =
@@ -868,17 +867,17 @@ static unsigned char gaConfig_AD242xSlaveNode1_CLK2CFG_Data5[1] =
     0x81u
 };
 
-static unsigned char gaConfig_AD242xSlaveNode1_INTMSK0_Data6[1] =
+static unsigned char gaConfig_AD242xSlaveNode1_MBOX1CTL_Data6[1] =
+{
+    0x00u
+};
+
+static unsigned char gaConfig_AD242xSlaveNode1_INTMSK0_Data7[1] =
 {
     0x10u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_NODEADRSet_Data23[1] =
-{
-    0x01u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data24[1] =
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data23[1] =
 {
     0x00u
 };
@@ -903,27 +902,42 @@ static unsigned char gaConfig_AD242xSlaveNode0_CLK2CFG_Data8[1] =
     0x81u
 };
 
-static unsigned char gaConfig_AD242xSlaveNode0_INTMSK0_Data9[1] =
-{
-    0x10u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_NODEADRSet_Data25[1] =
+static unsigned char gaConfig_AD242xSlaveNode0_MBOX1CTL_Data9[1] =
 {
     0x00u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_I2SCFG_Data26[1] =
+static unsigned char gaConfig_AD242xSlaveNode0_INTMSK0_Data10[1] =
+{
+    0x10u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_I2SCFG_Data24[1] =
 {
     0x01u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_PDMCTL_Data27[1] =
+static unsigned char gaConfig_AD242xMasterNode0_PDMCTL_Data25[1] =
 {
     0x0Au
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_PDMCTL2_Data28[1] =
+static unsigned char gaConfig_AD242xMasterNode0_PDMCTL2_Data26[1] =
+{
+    0x08u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data27[1] =
+{
+    0x00u
+};
+
+static unsigned char gaConfig_AD242xSlaveNode0_UPSLOTS_Data11[1] =
+{
+    0x04u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_UPSLOTS_Data28[1] =
 {
     0x08u
 };
@@ -933,194 +947,195 @@ static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data29[1] =
     0x00u
 };
 
-static unsigned char gaConfig_AD242xSlaveNode0_UPSLOTS_Data10[1] =
+static unsigned char gaConfig_AD242xSlaveNode0_SWCTL_Data12[1] =
 {
-    0x04u
+    0x01u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_UPSLOTS_Data30[1] =
+static unsigned char gaConfig_AD242xMasterNode0_SWCTL_Data30[1] =
 {
-    0x08u
+    0x01u
 };
 
 static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data31[1] =
 {
-    0x00u
-};
-
-static unsigned char gaConfig_AD242xSlaveNode0_SWCTL_Data11[1] =
-{
-    0x01u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_SWCTL_Data32[1] =
-{
-    0x01u
-};
-
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data33[1] =
-{
     0x80u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data34[1] =
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data32[1] =
 {
     0x00u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_SLOTFMT_Data35[1] =
+static unsigned char gaConfig_AD242xMasterNode0_SLOTFMT_Data33[1] =
 {
     0x44u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_DATCTL_Data36[1] =
+static unsigned char gaConfig_AD242xMasterNode0_DATCTL_Data34[1] =
 {
     0x03u
 };
 
-static unsigned char gaConfig_AD242xMasterNode0_CONTROL_Data37[1] =
+static unsigned char gaConfig_AD242xMasterNode0_CONTROL_Data35[1] =
+{
+    0x81u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_A2BDelay_Data36[1] =
 {
     0x01u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_NODEADR_Data37[1] =
+{
+    0x01u
+};
+
+static unsigned char gaConfig_AD242xMasterNode0_CONTROL_Data38[1] =
+{
+    0x82u
 };
 
 ADI_A2B_DISCOVERY_CONFIG gaA2BConfig[CONFIG_LEN] =
 {
 
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data0[0]},  /* CONTROL */
-    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data1[0]}, /* A2B_Delay */
-    {0x68u, READ,   0x01u,  0x00000017u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTTYPE_Data2[0]},  /* INTTYPE */
-    {0x68u, WRITE,  0x01u,  0x0000001Bu,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTMSK0_Data3[0]},  /* INTMSK0 */
-    {0x68u, WRITE,  0x01u,  0x0000001Du,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTMSK2_Data4[0]},  /* INTMSK2 */
-    {0x68u, WRITE,  0x01u,  0x0000000Fu,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_RESPCYCS_Data5[0]}, /* RESPCYCS */
-    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data6[0]},  /* CONTROL */
-    {0x68u, WRITE,  0x01u,  0x00000041u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_I2SGCFG_Data7[0]},  /* I2SGCFG */
-    {0x68u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SWCTL_Data8[0]},    /* SWCTL */
-    {0x68u, WRITE,  0x01u,  0x00000013u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_DISCVRY_Data9[0]},  /* DISCVRY */
-    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data10[0]},    /* A2B_Delay */
-    {0x68u, READ,   0x01u,  0x0000001Au,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTPND2_Data11[0]}, /* INTPND2 */
-    {0x68u, WRITE,  0x01u,  0x0000001Au,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTPND2_Data12[0]}, /* INTPND2 */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data13[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
-    {0x69u, READ,   0x01u,  0x00000002u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_VENDOR_Data0[0]},    /* VENDOR */
-    {0x69u, READ,   0x01u,  0x00000003u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_PRODUCT_Data1[0]},   /* PRODUCT */
-    {0x69u, READ,   0x01u,  0x00000004u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_VERSION_Data2[0]},   /* VERSION */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SWCTL_Data14[0]},   /* SWCTL */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data15[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
-    {0x69u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_SWCTL_Data3[0]}, /* SWCTL */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000013u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_DISCVRY_Data16[0]}, /* DISCVRY */
-    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data17[0]},    /* A2B_Delay */
-    {0x68u, READ,   0x01u,  0x0000001Au,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTPND2_Data18[0]}, /* INTPND2 */
-    {0x68u, WRITE,  0x01u,  0x0000001Au,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTPND2_Data19[0]}, /* INTPND2 */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data20[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node1 --*/
-    {0x69u, READ,   0x01u,  0x00000002u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_VENDOR_Data0[0]},    /* VENDOR */
-    {0x69u, READ,   0x01u,  0x00000003u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_PRODUCT_Data1[0]},   /* PRODUCT */
-    {0x69u, READ,   0x01u,  0x00000004u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_VERSION_Data2[0]},   /* VERSION */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data21[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
-    {0x69u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_SWCTL_Data4[0]}, /* SWCTL */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data22[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node1 --*/
-    {0x69u, WRITE,  0x01u,  0x0000000Cu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_LUPSLOTS_Data3[0]},  /* LUPSLOTS */
-    {0x69u, WRITE,  0x01u,  0x00000047u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_PDMCTL_Data4[0]},    /* PDMCTL */
-    {0x69u, WRITE,  0x01u,  0x0000005Au,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_CLK2CFG_Data5[0]},   /* CLK2CFG */
-    {0x69u, WRITE,  0x01u,  0x0000001Bu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_INTMSK0_Data6[0]},   /* INTMSK0 */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADRSet_Data23[0]},  /* NODEADR - Set the node address */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data24[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
-    {0x69u, WRITE,  0x01u,  0x0000000Bu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_LDNSLOTS_Data5[0]},  /* LDNSLOTS */
-    {0x69u, WRITE,  0x01u,  0x0000000Cu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_LUPSLOTS_Data6[0]},  /* LUPSLOTS */
-    {0x69u, WRITE,  0x01u,  0x00000047u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_PDMCTL_Data7[0]},    /* PDMCTL */
-    {0x69u, WRITE,  0x01u,  0x0000005Au,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_CLK2CFG_Data8[0]},   /* CLK2CFG */
-    {0x69u, WRITE,  0x01u,  0x0000001Bu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_INTMSK0_Data9[0]},   /* INTMSK0 */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADRSet_Data25[0]},  /* NODEADR - Set the node address */
-    {0x68u, WRITE,  0x01u,  0x00000042u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_I2SCFG_Data26[0]},  /* I2SCFG */
-    {0x68u, WRITE,  0x01u,  0x00000047u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_PDMCTL_Data27[0]},  /* PDMCTL */
-    {0x68u, WRITE,  0x01u,  0x0000005Du,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_PDMCTL2_Data28[0]}, /* PDMCTL2 */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data29[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
-    {0x69u, WRITE,  0x01u,  0x0000000Eu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_UPSLOTS_Data10[0]},  /* UPSLOTS */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x0000000Eu,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_UPSLOTS_Data30[0]}, /* UPSLOTS */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data31[0]}, /* NODEADR */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
-    {0x69u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_SWCTL_Data11[0]},    /* SWCTL */
-
-    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
-    {0x68u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SWCTL_Data32[0]},   /* SWCTL */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data33[0]}, /* NODEADR */
-    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data34[0]}, /* NODEADR */
-    {0x68u, WRITE,  0x01u,  0x00000010u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SLOTFMT_Data35[0]}, /* SLOTFMT */
-    {0x68u, WRITE,  0x01u,  0x00000011u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_DATCTL_Data36[0]},  /* DATCTL */
-    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data37[0]}, /* CONTROL */
-
-
     /*-- COMMANDS FOR DEVICE - Audio Host0 --*/
-    {0x39u, WRITE,  0x02u,  0x00000000u,    0x01u,  0x0004u,    &gaConfig_AudioHost0_NonModRamAlloc_Data0[0]},  /* NonModRamAlloc */
-    {0x39u, WRITE,  0x02u,  0x000040EBu,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SampleRate_Data1[0]},  /* IC 1.Sample Rate Setting */
-    {0x39u, WRITE,  0x02u,  0x000040F6u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPRun_Data2[0]},  /* IC 1.DSP Run Register */
-    {0x39u, WRITE,  0x02u,  0x00004000u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_ClockControl_Data3[0]},    /* IC 1.Clock Control Register */
-    {0x39u, WRITE,  0x02u,  0x00004002u,    0x01u,  0x0006u,    &gaConfig_AudioHost0_PLLControl_Data4[0]},  /* IC 1.PLL Control Register */
-    {0x00u, DELAY,  0x02u,  0x00000000u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_Delay_Data5[0]},   /* IC 1.Delay */
-    {0x39u, WRITE,  0x02u,  0x00004015u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_SerialPort_Data6[0]},  /* IC 1.Serial Port Control Registers */
-    {0x39u, WRITE,  0x02u,  0x00004011u,    0x01u,  0x0004u,    &gaConfig_AudioHost0_ALCControl_Data7[0]},  /* IC 1.ALC Control Registers */
-    {0x39u, WRITE,  0x02u,  0x00004008u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_MicrophoneControl_Data8[0]},   /* IC 1.Microphone Control Register */
-    {0x39u, WRITE,  0x02u,  0x00004009u,    0x01u,  0x0008u,    &gaConfig_AudioHost0_RecordInput_Data9[0]}, /* IC 1.Record Input Signal Path Registers */
-    {0x39u, WRITE,  0x02u,  0x00004019u,    0x01u,  0x0003u,    &gaConfig_AudioHost0_ADCControl_Data10[0]}, /* IC 1.ADC Control Registers */
-    {0x39u, WRITE,  0x02u,  0x0000401Cu,    0x01u,  0x000Eu,    &gaConfig_AudioHost0_PlaybackOutput_Data11[0]}, /* IC 1.Playback Output Signal Path Registers */
-    {0x39u, WRITE,  0x02u,  0x00004017u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_ConverterControl_Data12[0]},   /* IC 1.Converter Control Registers */
-    {0x39u, WRITE,  0x02u,  0x0000402Au,    0x01u,  0x0003u,    &gaConfig_AudioHost0_DACControl_Data13[0]}, /* IC 1.DAC Control Registers */
-    {0x39u, WRITE,  0x02u,  0x0000402Du,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SerialPort_Data14[0]}, /* IC 1.Serial Port Pad Control Registers */
-    {0x39u, WRITE,  0x02u,  0x0000402Fu,    0x01u,  0x0002u,    &gaConfig_AudioHost0_CommunicationPort_Data15[0]},  /* IC 1.Communication Port Pad Control Registers */
-    {0x39u, WRITE,  0x02u,  0x00004031u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_JackDetect_Data16[0]}, /* IC 1.Jack Detect Pad Control Register */
-    {0x39u, WRITE,  0x02u,  0x00000800u,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data17[0]},   /* Program Clear Block 0 */
-    {0x39u, WRITE,  0x02u,  0x000008CCu,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data18[0]},   /* Program Clear Block 1 */
-    {0x39u, WRITE,  0x02u,  0x00000998u,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data19[0]},   /* Program Clear Block 2 */
-    {0x39u, WRITE,  0x02u,  0x00000A64u,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data20[0]},   /* Program Clear Block 3 */
-    {0x39u, WRITE,  0x02u,  0x00000BFCu,    0x01u,  0x000Fu,    &gaConfig_AudioHost0_ProgramClear_Data21[0]},   /* Program Clear Block 4 */
-    {0x39u, WRITE,  0x02u,  0x000040F5u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPON_Data22[0]},  /* IC 1.DSP ON Register */
-    {0x39u, WRITE,  0x02u,  0x000040C0u,    0x01u,  0x0005u,    &gaConfig_AudioHost0_CRCRegisters_Data23[0]},   /* IC 1.CRC Registers */
-    {0x39u, WRITE,  0x02u,  0x000040C6u,    0x01u,  0x0004u,    &gaConfig_AudioHost0_GPIORegisters_Data24[0]},  /* IC 1.GPIO Registers */
-    {0x39u, WRITE,  0x02u,  0x000040E9u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_NonModulo_Data25[0]},  /* IC 1.Non Modulo Registers */
-    {0x39u, WRITE,  0x02u,  0x000040D0u,    0x01u,  0x0005u,    &gaConfig_AudioHost0_WatchdogRegisters_Data26[0]},  /* IC 1.Watchdog Registers */
-    {0x39u, WRITE,  0x02u,  0x000040EBu,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SamplingRate_Data27[0]},   /* IC 1.Sampling Rate Setting Register */
-    {0x39u, WRITE,  0x02u,  0x000040F2u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_RoutingMatrix_Data28[0]},  /* IC 1.Routing Matrix Inputs Register */
-    {0x39u, WRITE,  0x02u,  0x000040F3u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_RoutingMatrix_Data29[0]},  /* IC 1.Routing Matrix Outputs Register */
-    {0x39u, WRITE,  0x02u,  0x000040F4u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SerialData_Data30[0]}, /* IC 1.Serial Data Configuration Register */
-    {0x39u, WRITE,  0x02u,  0x000040F7u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPSlew_Data31[0]},    /* IC 1.DSP Slew Mode Register */
-    {0x39u, WRITE,  0x02u,  0x000040F8u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SerialPort_Data32[0]}, /* IC 1.Serial Port Sample Rate Register */
-    {0x39u, WRITE,  0x02u,  0x000040F9u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_ClockEnable_Data33[0]},    /* IC 1.Clock Enable Registers */
-    {0x39u, WRITE,  0x02u,  0x00000800u,    0x01u,  0x0113u,    &gaConfig_AudioHost0_ProgramData_Data34[0]},    /* Program Data */
-    {0x39u, WRITE,  0x02u,  0x00000000u,    0x01u,  0x0020u,    &gaConfig_AudioHost0_Param_Data35[0]},  /* Param */
-    {0x39u, WRITE,  0x02u,  0x000040EBu,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SampleRate_Data36[0]}, /* IC 1.Sample Rate Setting */
-    {0x39u, WRITE,  0x02u,  0x000040F6u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPRun_Data37[0]}, /* IC 1.DSP Run Register */
-    {0x39u, WRITE,  0x02u,  0x00004036u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DejitterRegister_Data38[0]},   /* IC 1.Dejitter Register Control */
-    {0x39u, WRITE,  0x02u,  0x00004036u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DejitterRegister_Data39[0]},   /* IC 1.Dejitter Register Control */
+    {0x39u, WRITE,  0x02u,  0x00000000u,    0x01u,  0x0004u,    &gaConfig_AudioHost0_NonModRamAlloc_Data0[0] }, /* NonModRamAlloc */
+    {0x39u, WRITE,  0x02u,  0x000040EBu,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SampleRate_Data1[0] }, /* Sample Rate Setting */
+    {0x39u, WRITE,  0x02u,  0x000040F6u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPRun_Data2[0] }, /* DSP Run Register */
+    {0x39u, WRITE,  0x02u,  0x00004000u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_ClockControl_Data3[0] },   /* Clock Control Register */
+    {0x39u, WRITE,  0x02u,  0x00004002u,    0x01u,  0x0006u,    &gaConfig_AudioHost0_PLLControl_Data4[0] }, /* PLL Control Register */
+    {0x00u, DELAY,  0x02u,  0x00000000u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_Delay_Data5[0] },  /* Delay */
+    {0x39u, WRITE,  0x02u,  0x00004015u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_SerialPort_Data6[0] }, /* Serial Port Control Registers */
+    {0x39u, WRITE,  0x02u,  0x00004011u,    0x01u,  0x0004u,    &gaConfig_AudioHost0_ALCControl_Data7[0] }, /* ALC Control Registers */
+    {0x39u, WRITE,  0x02u,  0x00004008u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_MicrophoneControl_Data8[0] },  /* Microphone Control Register */
+    {0x39u, WRITE,  0x02u,  0x00004009u,    0x01u,  0x0008u,    &gaConfig_AudioHost0_RecordInput_Data9[0] },    /* Record Input Signal Path Registers */
+    {0x39u, WRITE,  0x02u,  0x00004019u,    0x01u,  0x0003u,    &gaConfig_AudioHost0_ADCControl_Data10[0] },    /* ADC Control Registers */
+    {0x39u, WRITE,  0x02u,  0x0000401Cu,    0x01u,  0x000Eu,    &gaConfig_AudioHost0_PlaybackOutput_Data11[0] },    /* Playback Output Signal Path Registers */
+    {0x39u, WRITE,  0x02u,  0x00004017u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_ConverterControl_Data12[0] },  /* Converter Control Registers */
+    {0x39u, WRITE,  0x02u,  0x0000402Au,    0x01u,  0x0003u,    &gaConfig_AudioHost0_DACControl_Data13[0] },    /* DAC Control Registers */
+    {0x39u, WRITE,  0x02u,  0x0000402Du,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SerialPort_Data14[0] },    /* Serial Port Pad Control Registers */
+    {0x39u, WRITE,  0x02u,  0x0000402Fu,    0x01u,  0x0002u,    &gaConfig_AudioHost0_CommunicationPort_Data15[0] }, /* Communication Port Pad Control Registers */
+    {0x39u, WRITE,  0x02u,  0x00004031u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_JackDetect_Data16[0] },    /* Jack Detect Pad Control Register */
+    {0x39u, WRITE,  0x02u,  0x00000800u,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data17[0] },  /* Program Clear Block 0 */
+    {0x39u, WRITE,  0x02u,  0x000008CCu,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data18[0] },  /* Program Clear Block 1 */
+    {0x39u, WRITE,  0x02u,  0x00000998u,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data19[0] },  /* Program Clear Block 2 */
+    {0x39u, WRITE,  0x02u,  0x00000A64u,    0x01u,  0x03FCu,    &gaConfig_AudioHost0_ProgramClear_Data20[0] },  /* Program Clear Block 3 */
+    {0x39u, WRITE,  0x02u,  0x00000BFCu,    0x01u,  0x000Fu,    &gaConfig_AudioHost0_ProgramClear_Data21[0] },  /* Program Clear Block 4 */
+    {0x39u, WRITE,  0x02u,  0x000040F5u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPON_Data22[0] }, /* DSP ON Register */
+    {0x39u, WRITE,  0x02u,  0x000040C0u,    0x01u,  0x0005u,    &gaConfig_AudioHost0_CRCRegisters_Data23[0] },  /* CRC Registers */
+    {0x39u, WRITE,  0x02u,  0x000040C6u,    0x01u,  0x0004u,    &gaConfig_AudioHost0_GPIORegisters_Data24[0] }, /* GPIO Registers */
+    {0x39u, WRITE,  0x02u,  0x000040E9u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_NonModulo_Data25[0] }, /* Non Modulo Registers */
+    {0x39u, WRITE,  0x02u,  0x000040D0u,    0x01u,  0x0005u,    &gaConfig_AudioHost0_WatchdogRegisters_Data26[0] }, /* Watchdog Registers */
+    {0x39u, WRITE,  0x02u,  0x000040EBu,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SamplingRate_Data27[0] },  /* Sampling Rate Setting Register */
+    {0x39u, WRITE,  0x02u,  0x000040F2u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_RoutingMatrix_Data28[0] }, /* Routing Matrix Inputs Register */
+    {0x39u, WRITE,  0x02u,  0x000040F3u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_RoutingMatrix_Data29[0] }, /* Routing Matrix Outputs Register */
+    {0x39u, WRITE,  0x02u,  0x000040F4u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SerialData_Data30[0] },    /* Serial Data Configuration Register */
+    {0x39u, WRITE,  0x02u,  0x000040F7u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPSlew_Data31[0] },   /* DSP Slew Mode Register */
+    {0x39u, WRITE,  0x02u,  0x000040F8u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SerialPort_Data32[0] },    /* Serial Port Sample Rate Register */
+    {0x39u, WRITE,  0x02u,  0x000040F9u,    0x01u,  0x0002u,    &gaConfig_AudioHost0_ClockEnable_Data33[0] },   /* Clock Enable Registers */
+    {0x39u, WRITE,  0x02u,  0x00000800u,    0x01u,  0x0113u,    &gaConfig_AudioHost0_ProgramData_Data34[0] },   /* Program Data */
+    {0x39u, WRITE,  0x02u,  0x00000000u,    0x01u,  0x0020u,    &gaConfig_AudioHost0_Param_Data35[0] }, /* Param */
+    {0x39u, WRITE,  0x02u,  0x000040EBu,    0x01u,  0x0001u,    &gaConfig_AudioHost0_SampleRate_Data36[0] },    /* Sample Rate Setting */
+    {0x39u, WRITE,  0x02u,  0x000040F6u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DSPRun_Data37[0] },    /* DSP Run Register */
+    {0x39u, WRITE,  0x02u,  0x00004036u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DejitterRegister_Data38[0] },  /* Dejitter Register Control */
+    {0x39u, WRITE,  0x02u,  0x00004036u,    0x01u,  0x0001u,    &gaConfig_AudioHost0_DejitterRegister_Data39[0] },  /* Dejitter Register Control */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data0[0] }, /* CONTROL */
+    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data1[0] },    /* A2B_Delay */
+    {0x68u, READ,   0x01u,  0x00000017u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTTYPE_Data2[0] }, /* INTTYPE */
+    {0x68u, WRITE,  0x01u,  0x0000001Bu,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTMSK0_Data3[0] }, /* INTMSK0 */
+    {0x68u, WRITE,  0x01u,  0x0000001Du,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTMSK2_Data4[0] }, /* INTMSK2 */
+    {0x68u, WRITE,  0x01u,  0x0000001Au,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTPND2_Data5[0] }, /* INTPND2 */
+    {0x68u, WRITE,  0x01u,  0x0000000Fu,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_RESPCYCS_Data6[0] },    /* RESPCYCS */
+    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data7[0] }, /* CONTROL */
+    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data8[0] },    /* A2B_Delay */
+    {0x68u, WRITE,  0x01u,  0x00000041u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_I2SGCFG_Data9[0] }, /* I2SGCFG */
+    {0x68u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SWCTL_Data10[0] },  /* SWCTL */
+    {0x68u, WRITE,  0x01u,  0x00000013u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_DISCVRY_Data11[0] },    /* DISCVRY */
+    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data12[0] },   /* A2B_Delay */
+    {0x68u, READ,   0x01u,  0x00000017u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTTYPE_Data13[0] },    /* INTTYPE */
+    {0x68u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SWCTL_Data14[0] },  /* SWCTL */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data15[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
+    {0x69u, READ,   0x01u,  0x00000002u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_VENDOR_Data0[0] },   /* VENDOR */
+    {0x69u, READ,   0x01u,  0x00000003u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_PRODUCT_Data1[0] },  /* PRODUCT */
+    {0x69u, READ,   0x01u,  0x00000004u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_VERSION_Data2[0] },  /* VERSION */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data16[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
+    {0x69u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_SWCTL_Data3[0] },    /* SWCTL */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000013u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_DISCVRY_Data17[0] },    /* DISCVRY */
+    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data18[0] },   /* A2B_Delay */
+    {0x68u, READ,   0x01u,  0x00000017u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_INTTYPE_Data19[0] },    /* INTTYPE */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data20[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
+    {0x69u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_SWCTL_Data4[0] },    /* SWCTL */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data21[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node1 --*/
+    {0x69u, READ,   0x01u,  0x00000002u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_VENDOR_Data0[0] },   /* VENDOR */
+    {0x69u, READ,   0x01u,  0x00000003u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_PRODUCT_Data1[0] },  /* PRODUCT */
+    {0x69u, READ,   0x01u,  0x00000004u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_VERSION_Data2[0] },  /* VERSION */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data22[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node1 --*/
+    {0x69u, WRITE,  0x01u,  0x0000000Cu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_LUPSLOTS_Data3[0] }, /* LUPSLOTS */
+    {0x69u, WRITE,  0x01u,  0x00000047u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_PDMCTL_Data4[0] },   /* PDMCTL */
+    {0x69u, WRITE,  0x01u,  0x0000005Au,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_CLK2CFG_Data5[0] },  /* CLK2CFG */
+    {0x69u, WRITE,  0x01u,  0x00000096u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_MBOX1CTL_Data6[0] }, /* MBOX1CTL */
+    {0x69u, WRITE,  0x01u,  0x0000001Bu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode1_INTMSK0_Data7[0] },  /* INTMSK0 */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data23[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
+    {0x69u, WRITE,  0x01u,  0x0000000Bu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_LDNSLOTS_Data5[0] }, /* LDNSLOTS */
+    {0x69u, WRITE,  0x01u,  0x0000000Cu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_LUPSLOTS_Data6[0] }, /* LUPSLOTS */
+    {0x69u, WRITE,  0x01u,  0x00000047u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_PDMCTL_Data7[0] },   /* PDMCTL */
+    {0x69u, WRITE,  0x01u,  0x0000005Au,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_CLK2CFG_Data8[0] },  /* CLK2CFG */
+    {0x69u, WRITE,  0x01u,  0x00000096u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_MBOX1CTL_Data9[0] }, /* MBOX1CTL */
+    {0x69u, WRITE,  0x01u,  0x0000001Bu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_INTMSK0_Data10[0] }, /* INTMSK0 */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000042u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_I2SCFG_Data24[0] }, /* I2SCFG */
+    {0x68u, WRITE,  0x01u,  0x00000047u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_PDMCTL_Data25[0] }, /* PDMCTL */
+    {0x68u, WRITE,  0x01u,  0x0000005Du,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_PDMCTL2_Data26[0] },    /* PDMCTL2 */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data27[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
+    {0x69u, WRITE,  0x01u,  0x0000000Eu,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_UPSLOTS_Data11[0] }, /* UPSLOTS */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x0000000Eu,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_UPSLOTS_Data28[0] },    /* UPSLOTS */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data29[0] },    /* NODEADR */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Slave Node0 --*/
+    {0x69u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xSlaveNode0_SWCTL_Data12[0] },   /* SWCTL */
+
+    /*-- COMMANDS FOR DEVICE - AD242x Master Node0 --*/
+    {0x68u, WRITE,  0x01u,  0x00000009u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SWCTL_Data30[0] },  /* SWCTL */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data31[0] },    /* NODEADR */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data32[0] },    /* NODEADR */
+    {0x68u, WRITE,  0x01u,  0x00000010u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_SLOTFMT_Data33[0] },    /* SLOTFMT */
+    {0x68u, WRITE,  0x01u,  0x00000011u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_DATCTL_Data34[0] }, /* DATCTL */
+    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data35[0] },    /* CONTROL */
+    {0x00u, DELAY,  0x01u,  0x00000000u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_A2BDelay_Data36[0] },   /* A2B_Delay */
+    {0x68u, WRITE,  0x01u,  0x00000001u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_NODEADR_Data37[0] },    /* NODEADR */
+    {0x68u, WRITE,  0x01u,  0x00000012u,    0x01u,  0x0001u,    &gaConfig_AD242xMasterNode0_CONTROL_Data38[0] },    /* CONTROL */
 };
 
-#endif /* _ADI_A2B_I2C_LIST_H_ */
+#endif /* _ADI_A2B_CMD_LIST_H_ */
 

@@ -1,18 +1,18 @@
 # space <name> <id> <mau size>
-space	mpe:tc0:csa	104	8
 space	mpe:vtc:linear	1	8
 space	mpe:vtc:abs24	2	8
 space	mpe:vtc:abs18	3	8
+space	mpe:tc0:csa	104	8
 space	mpe:tc0:linear	101	8
-space	mpe:tc0:abs18	103	8
 space	mpe:tc0:abs24	102	8
+space	mpe:tc0:abs18	103	8
 # chip <name> <id> <mau size> <size> <type>
+chip	mpe:dsram0	0	8	196608	ram
+chip	mpe:dfls0	3	8	262144	nvram
 chip	mpe:psram0	1	8	8192	ram
 chip	mpe:pfls0	2	8	2097152	rom
-chip	mpe:dfls0	3	8	262144	nvram
 chip	mpe:ucb	4	8	24576	rom
 chip	mpe:cpu0_dlmu	5	8	8192	ram
-chip	mpe:dsram0	0	8	196608	ram
 # map <space id> <start in space> <size in space> <chip id> <start on chip>
 map	101	3489660928	196608	0	0
 map	102	3489660928	196608	0	0
